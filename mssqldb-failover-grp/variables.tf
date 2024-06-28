@@ -6,7 +6,7 @@ variable "sqlserver-name" {
 variable "resource_group_name" {
     type = string
     description = "name of resource group"
-    default = "default-rg"
+    default = "cse-aifs-poc-test-east-us-2"
 }
 
 variable "primary_location" {
