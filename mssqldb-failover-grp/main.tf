@@ -1,11 +1,16 @@
-# Configure the Azure provider
-provider "azurerm" { 
-    # The "feature" block is required for AzureRM provider 2.x. 
-    # If you are using version 1.x, the "features" block is not allowed.
-    features {}
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = ">= 2.26"
+    }
+  }
 }
 
-data "azurerm_subscription" "current" {
+provider "azurerm" {
+  features {}
+  subscription_id = "256df3c7-8788-448d-9633-aa72f5256bb3"
+    tenant_id= "dd64b6ec-0a2a-4f60-8ca1-eeaab33884d7"
 }
 
 data "azurerm_key_vault" "dbvault" {
